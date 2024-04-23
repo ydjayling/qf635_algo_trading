@@ -19,7 +19,7 @@ class Account:
 
     # To get balance of this account
     def balance(self):
-        return self.amount
+        return self.balance
 
     # to deposit money to this account
     def deposit(self, amount):
