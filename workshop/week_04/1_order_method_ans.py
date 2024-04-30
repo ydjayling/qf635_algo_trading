@@ -10,6 +10,10 @@ from urllib.parse import urlencode
 import hmac
 import hashlib
 import requests
+import dotenv
+import os
+
+dotenv.load_dotenv('vault/secrets.env')
 
 logging.basicConfig(format='%(asctime)s [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s', level=logging.INFO)
 
@@ -53,6 +57,6 @@ def send_market_order(key: str, secret: str, symbol: str, quantity: float, side:
 
 
 if __name__ == '__main__':
-    api_key = ''
-    api_secret = ''
+    api_key = os.getenv('API_KEY')
+    api_secret = os.getenv('API_SECRET')
     send_market_order(api_key, api_secret, 'BTCUSDT', 0.1, True)
