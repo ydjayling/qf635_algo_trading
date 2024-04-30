@@ -20,10 +20,10 @@ BASE_URL = 'https://testnet.binancefuture.com'
 
 # get api key and secret
 def get_credentials():
-    dotenv_path = '/vault/binance_keys'
+    dotenv_path = 'vault/secrets.env'
     load_dotenv(dotenv_path=dotenv_path)
     # return api key and secret as tuple
-    return os.getenv('BINANCE_API_KEY'), os.getenv('BINANCE_API_SECRET')
+    return os.getenv('API_KEY'), os.getenv('API_SECRET')
 
 
 # send market order
