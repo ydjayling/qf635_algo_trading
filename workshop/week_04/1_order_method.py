@@ -9,6 +9,10 @@ Create a method to send market order. User will specify the following parameters
 
 """
 
+import dotenv
+import os
+
+dotenv.load_dotenv('vault/secrets.env')
 
 # TODO
 def send_market_order(key: str, secret: str, symbol: str, quantity: float, side: bool):
@@ -16,6 +20,6 @@ def send_market_order(key: str, secret: str, symbol: str, quantity: float, side:
 
 
 if __name__ == '__main__':
-    api_key = ''
-    api_secret = ''
+    api_key = os.getenv('API_KEY')
+    api_secret = os.getenv('API_SECRET')
     send_market_order(api_key, api_secret, 'BTCUSDT', 0.1, True)
