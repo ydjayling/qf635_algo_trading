@@ -73,7 +73,7 @@ if __name__ == '__main__':
 
         # sleep
         logging.info('sleep')
-        time.sleep(10)
+        time.sleep(2)
 
         # flip side
         is_buy = not is_buy
