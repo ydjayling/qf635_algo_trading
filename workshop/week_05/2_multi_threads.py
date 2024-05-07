@@ -24,7 +24,7 @@ def factorial(n: int, result: [int]):
         # sleep for a second - release the GIL, allowing other threads to run
         time.sleep(1)
 
-        logging.info('Calculating factorial[{}] step = {}'.format(n, i))
+        logging.info('Calculating factorial[{}] step = {}, res = {}'.format(n, i, _result))
 
         # multiply factorial value
         _result = _result * i
@@ -41,8 +41,12 @@ if __name__ == '__main__':
     thread_2 = Thread(target=factorial, args=(15, result_2))
 
     # TODO start executing both threads
+    thread_1.start()
+    thread_2.start()
 
     # TODO wait for both threads to finish
+    thread_1.join()
+    thread_2.join()
 
     logging.info('Factorial of 10 = {}'.format(result_1[0]))
     logging.info('Factorial of 15 = {}'.format(result_2[0]))
