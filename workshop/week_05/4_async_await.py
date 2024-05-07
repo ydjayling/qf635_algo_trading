@@ -21,12 +21,16 @@ async def cut_ingredients():
 
 # TODO copy code from above and change the print, sleep for 5 seconds in between print
 async def cook_food():
-    pass
+    logging.info("Cooking food...")
+    await asyncio.sleep(5)
+    logging.info("Finished cooking food")
 
 
 # TODO copy code from above and change the print, sleep for 10 seconds in between print
 async def prepare_dessert():
-    pass
+    logging.info("Preparing dessert...")
+    await asyncio.sleep(10)
+    logging.info("Finished preparing dessert")
 
 
 async def cook():

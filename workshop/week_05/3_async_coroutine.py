@@ -38,6 +38,7 @@ async def fetch_data_async():
 
 if __name__ == '__main__':
     # TODO run and print result from fetch_data()
+    print(fetch_data())
 
     # run a coroutine
     data = asyncio.run(fetch_data_async())
